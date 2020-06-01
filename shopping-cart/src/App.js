@@ -4,23 +4,25 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Cart from './components/Cart'
 import Main from './components/Main';
+import About from './components/About';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
     return (
        <BrowserRouter>
-         
-            <div className="App">
 
+            <div className="App">
               <Navbar/>
               <Switch>
                   <Route exact path="/" component={Main}/>
+                  <Route path="/about" component={About}/>
                   <Route path="/products" component={Home}/>
                   <Route path="/cart" component={Cart}/>
               </Switch>
+              <Footer />
              </div>
        </BrowserRouter>
-
     );
   }
 }
