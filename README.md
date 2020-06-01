@@ -1,6 +1,6 @@
 # React Shopping Cart
 <<<<<<< HEAD
-> Simple e-commerce app
+> Simple e-commerce app.
 
 ## Table of contents
 * [General info](#general-info)
