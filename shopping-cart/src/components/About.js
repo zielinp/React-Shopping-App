@@ -4,7 +4,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 class About extends Component {
   render() {
-    const notify = () => toast("Wow so easy !");
+    const notify = () => toast.info("Wow so easy !",{
+position: "bottom-left",
+autoClose: 5000,
+hideProgressBar: true,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+});
 
     return(
 <div className="container">
@@ -14,7 +22,17 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
         <button onClick={notify}>Notify !</button>
- <ToastContainer />
+        <ToastContainer
+      position="bottom-left"
+      autoClose={5000}
+      hideProgressBar
+      newestOnTop
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      />
 </div>
 
   )

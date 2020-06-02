@@ -7,6 +7,10 @@ import Item6 from '../../images/item6.jpg'
 import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING,SUB_SHIPPING } from '../actions/action-types/cart-actions'
 
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const initState = {
     items: [
         {id:1,title:'Winter body', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:110,img:Item1},
@@ -24,9 +28,22 @@ const cartReducer= (state = initState,action)=>{
 
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
-          let addedItem = state.items.find(item=> item.id === action.id) // skąd są itemy
+
+         let addedItem = state.items.find(item=> item.id === action.id) // skąd są itemy
           //check if the action id exists in the addedItems
          let existed_item= state.addedItems.find(item=> action.id === item.id)
+
+         toast.info(`You have added ${addedItem.title} to your cart!`,{
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+          }
+          );
+
          if(existed_item)
          {
             addedItem.quantity += 1 //skąd jest quantity?
@@ -52,6 +69,8 @@ const cartReducer= (state = initState,action)=>{
     if(action.type === REMOVE_ITEM){
             let itemToRemove= state.addedItems.find(item=> action.id === item.id)
             let new_items = state.addedItems.filter(item=> action.id !== item.id)
+
+            toast(`You have removed ${itemToRemove.title} from your cart!`);
 
             //calculating the total
             let newTotal = state.total - (itemToRemove.price * itemToRemove.quantity )

@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import { removeItem,addQuantity,subtractQuantity} from './actions/cartActions'
 import Recipe from './Recipe'
 
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Cart extends Component{
     //to remove the item completely
@@ -41,12 +42,13 @@ class Cart extends Component{
                                             <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleSubtractQuantity(item.id)}}>arrow_drop_down</i></Link>
                                         </div>
                                         <button className="waves-effect waves-light btn pink remove" onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
-                                    </div>
+                                       <ToastContainer />
+                                  </div>
                                 </li>
 
                     )
                 })
-            ): ( <p>Nothing.</p> )
+            ): ( <p>Your cart is empty.</p> )
        return(
             <div className="container">
                 <div className="cart">
@@ -54,7 +56,7 @@ class Cart extends Component{
                     <ul className="collection">
                         {addedItems}
                     </ul>
-                </div> 
+                </div>
                 {(this.props.items.length)?<Recipe />:''}
             </div>
        )

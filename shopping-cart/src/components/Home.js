@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from './actions/cartActions.js'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 class Home extends Component{
 
-  handleClick = (id)=>{
+  handleClick = (id,title)=>{
          this.props.addToCart(id);
      }
 
   render(){
+
     let itemList = this.props.items.map(item =>{
       return(
         <div className="card" key={item.id}>
@@ -17,8 +21,10 @@ class Home extends Component{
                            <span className="card-title">{item.title}</span>
                            <span to="/" className="btn-floating halfway-fab waves-effect waves-light red"
                              onClick={()=>{this.handleClick(item.id)}}>
-                              <i className="material-icons"> + </i>
-                           </span>
+                              <i className="material-icons"> add </i>
+
+                         </span>
+                         <ToastContainer />
                        </div>
 
                        <div className="card-content">
