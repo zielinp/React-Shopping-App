@@ -3,7 +3,7 @@ import BrandLogo from '../images/brand_logo.png'
 
 class Main extends Component {
   render() {
-    return (<div>
+    return (<div className="container">
 
       <div className="card">
         <div className="card-image waves-effect waves-block waves-light">

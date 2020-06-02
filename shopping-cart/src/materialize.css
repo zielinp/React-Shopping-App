@@ -2946,7 +2946,8 @@ ul.staggered-list li {
 }
 
 .page-footer {
-  padding-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 5px;
   color: #fff;
   background-color: #ee6e73;
 }
@@ -2966,7 +2967,7 @@ ul.staggered-list li {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px 0px;
+  padding: 0px 10px;
   color: rgba(255, 255, 255, 0.8);
   background-color: rgba(51, 51, 51, 0.08);
 }
