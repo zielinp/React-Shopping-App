@@ -1,39 +1,28 @@
 import React, {Component} from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import BrandLogo from '../images/brand_logo.png'
 
 class About extends Component {
   render() {
-    const notify = () => toast.info("Wow so easy !",{
-position: "bottom-left",
-autoClose: 5000,
-hideProgressBar: true,
-closeOnClick: true,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-});
 
     return(
-<div className="container">
-<h3> About us </h3>
-<div >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-        <button onClick={notify}>Notify !</button>
-        <ToastContainer
-      position="bottom-left"
-      autoClose={5000}
-      hideProgressBar
-      newestOnTop
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      />
-</div>
+      <div className="container">
+
+      <div className="card">
+        <div className="card-image waves-effect waves-block waves-light">
+          <img className="activator" src={BrandLogo} alt="Brand logo"/>
+        </div>
+        <div className="card-content">
+          <span className="card-title activator grey-text text-darken-4">Brand Story<i class="material-icons right">more_vert</i>
+          </span>
+        </div>
+        <div className="card-reveal">
+          <span className="card-title grey-text text-darken-4">Brand Story<i className="material-icons right">close</i>
+          </span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+
+      </div>
 
   )
   }

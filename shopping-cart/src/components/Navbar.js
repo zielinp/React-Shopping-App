@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
  const Navbar = ()=>{
     return(
-            <nav className="nav-wrapper rgb(182,213,225)" >
+            <nav className="nav-wrapper" >
                 <div className="container">
                     <Link to="/" className="brand-logo left">Modern Shop</Link>
 

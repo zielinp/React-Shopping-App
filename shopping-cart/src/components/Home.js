@@ -24,7 +24,7 @@ class Home extends Component{
                               <i className="material-icons"> add </i>
 
                          </span>
-                         <ToastContainer />
+
                        </div>
 
                        <div className="card-content">
@@ -39,6 +39,17 @@ class Home extends Component{
                  <h3 className="center">Products</h3>
                  <div className="box">
                      {itemList}
+                     <ToastContainer
+                          position="bottom-left"
+                          autoClose={5000}
+                          hideProgressBar
+                          newestOnTop
+                          closeOnClick
+                          rtl={false}
+                          pauseOnFocusLoss
+                          draggable
+                          pauseOnHover={false}
+                          />
                  </div>
              </div>
     )

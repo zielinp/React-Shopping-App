@@ -16,6 +16,7 @@ Project created as part of learning the basics of React and Redux.
 * Redux
 * Materialize
 * React-Toastify
+* EmailJS
 
 ## Features
 List of features ready and TODOs for future development

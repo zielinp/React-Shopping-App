@@ -33,6 +33,8 @@ componentWillUnmount() {
                         <li className="collection-item"><b>Total: {this.props.total} $</b></li>
                     </div>
                     <div className="checkout">
+
+                        
                         <button className="waves-effect waves-light btn">Checkout</button>
                     </div>
                  </div>
