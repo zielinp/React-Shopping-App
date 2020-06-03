@@ -7,6 +7,8 @@ import Item3 from '../images/item3.jpg'
 
 import emailjs from 'emailjs-com';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const slideImages = [
   Item1,
@@ -29,6 +31,7 @@ const properties = {
 
 
 class Main extends Component {
+    // EmailJS constructor
   constructor(props) {
 	super(props);
 	this.state = { name: 'Modren Shop', subscribe_email: '' };
@@ -86,7 +89,7 @@ class Main extends Component {
                         </div>
                       </form>
                     </div>
-
+                    <ToastContainer />
                 </div>
 
 
@@ -95,12 +98,13 @@ class Main extends Component {
   )
   }
 
-
+// EmailJS functions
 handleChange(event) {
   this.setState({subscribe_email: event.target.value})
 }
 
 handleSubmit(event) {
+  
   const templateId = 'subscribe';
 
   this.sendFeedback(templateId, {
@@ -112,13 +116,23 @@ handleSubmit(event) {
 
 sendFeedback(templateId, variables) {
   window.emailjs.send('gmail', templateId, variables).then(res => {
-    console.log('Email successfully sent!')
+    toast.info('Email successfully sent!' ,{
+           position: "bottom-left",
+           autoClose: 5000,
+           hideProgressBar: true,
+           closeOnClick: true,
+           pauseOnHover: false,
+           draggable: true,
+           progress: undefined,
+     })
   })
+
+
+
+
   // Handle errors here however you like, or use a React error boundary
   .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
 }
-
-
 
 
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-//import { addShipping } from './actions/cartActions'
+import { Link } from 'react-router-dom'
 
 class Recipe extends Component{
 
@@ -34,8 +34,8 @@ componentWillUnmount() {
                     </div>
                     <div className="checkout">
 
-                        
-                        <button className="waves-effect waves-light btn">Checkout</button>
+                        <Link to="/summary"><button className="waves-effect waves-light btn">Checkout</button></Link>
+
                     </div>
                  </div>
         )
