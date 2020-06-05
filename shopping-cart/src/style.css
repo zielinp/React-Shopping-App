@@ -1,27 +1,37 @@
 /* COLORS */
-
 /* Navabar color */
 .nav-wrapper{
   background-color: #42a5f5   !important;
 }
-
 /* Navabar color */
 .page-footer{
   background-color: #0d47a1  !important;
 }
-
 /* Buttons color */
 .btn{
   background-color: #1976d2  !important;
 }
 
+/* ABOUT PAGE */
+.cont{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border: 1px solid black;
 
+}
 
 
 /* SLIDES */
 .slide-container {
   width: 70%;
-  margin: auto; }
+  margin: auto;
+  }
+
+.each-slide{
+  border: 1px solid black;
+
+}
 
 h3 {
   text-align: center; }
@@ -31,7 +41,7 @@ h3 {
   align-items: center;
   justify-content: center;
   background-size: cover;
-  height: 500px;
+  height: 450px;
 }
 
 .each-slide span {

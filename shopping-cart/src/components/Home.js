@@ -36,21 +36,23 @@ class Home extends Component{
     })
     return(
       <div className="container">
-                 <h3 className="center">Products</h3>
+                 <h4 className="center">Products</h4>
+                 // box czy cont
                  <div className="box">
                      {itemList}
-                     <ToastContainer
-                          position="bottom-left"
-                          autoClose={5000}
-                          hideProgressBar
-                          newestOnTop
-                          closeOnClick
-                          rtl={false}
-                          pauseOnFocusLoss
-                          draggable
-                          pauseOnHover={false}
-                          />
                  </div>
+
+                 <ToastContainer
+                      position="bottom-left"
+                      autoClose={5000}
+                      hideProgressBar
+                      newestOnTop
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover={false}
+                      />
              </div>
     )
   }

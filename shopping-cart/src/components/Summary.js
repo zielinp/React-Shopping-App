@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import emailjs from 'emailjs-com';
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class Summary extends Component {
 
@@ -13,9 +15,50 @@ class Summary extends Component {
 
 
   render() {
+
+    //Disabled button when inputs are empty
+    function validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+    const {subscribe_email, first_name, last_name, address, city, country} = this.state;
+    const isEnabled = subscribe_email.length > 0  && validateEmail(subscribe_email) &&
+                      first_name.length > 0 && last_name.length > 0 &&
+                      address.length > 0 && city.length > 0 && country.length > 0;
+
+
+    // Products from cartReducer
+
+    let addedItems = this.props.items.length ? ( this.props.items.map(item=>{
+                return(
+
+                    <li className="collection-item avatar" key={item.id}>
+
+                                <div className="item-desc">
+                                    <span className="title">{item.title}</span>
+                                    <p><b>Price: {item.price}$</b></p>
+                                    <p><b>Quantity: {item.quantity}</b></p>
+                              </div>
+                            </li>
+
+                )
+            })
+        ): ( <p>Your cart is empty.</p> )
+
+
+
+
+
+
+
     return(
 <div className="container">
+
+<h5 className="center-align">Please complete the form and we will send you an e-mail with summary of your order.</h5>
+
   <div className="row">
+
     <form className="col s12">
       <div className="row">
 
@@ -63,11 +106,15 @@ class Summary extends Component {
             <label for="country">Country</label>
           </div>
 
-          <button className="waves-effect waves-light btn btn--submit"
-          onClick={this.handleSubmit}>Order</button>
+          <Link to="/summary/end"><button className="waves-effect waves-light btn btn--submit"
+          onClick={this.handleSubmit} disabled={!isEnabled}>Order</button></Link>
 
       </div>
     </form>
+    <ul className="collection">
+        {addedItems}
+    </ul>
+      Total: {this.props.total} $
   </div>
 </div>
 
@@ -111,7 +158,15 @@ class Summary extends Component {
   }
 
 
+
+
+
+
 }
-
-
-export default Summary
+const mapStateToProps = (state)=>{
+    return{
+        items: state.addedItems,
+        total: state.total
+}
+}
+export default connect (mapStateToProps) (Summary)

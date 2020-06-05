@@ -116,9 +116,10 @@ const cartReducer= (state = initState,action)=>{
         let shipping_price = 6;
 
         if (action.type === ADD_SHIPPING) {
+          let newTotal = state.total + shipping_price
           return {
             ...state,
-            total: state.total + shipping_price
+            total: newTotal
           }
         }
 

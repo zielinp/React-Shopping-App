@@ -7,6 +7,8 @@ import Main from './components/Main';
 import About from './components/About';
 import Footer from './components/Footer';
 import Summary from './components/Summary';
+import Card from './components/Card'
+import End from './components/End'
 
 class App extends Component {
   render() {
@@ -20,6 +22,7 @@ class App extends Component {
                     <Route path="/products" component={Home}/>
                     <Route path="/cart" component={Cart}/>
                     <Route path="/summary" component={Summary}/>
+                    <Route path="/summary/end" component={End}/>
                 </Switch>
             </div>
        </BrowserRouter>

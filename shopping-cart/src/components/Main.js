@@ -4,6 +4,7 @@ import { Slide } from 'react-slideshow-image';
 import Item1 from '../images/item1.jpg'
 import Item2 from '../images/item2.jpg'
 import Item3 from '../images/item3.jpg'
+import BrandLogo from '../images/brand_logo.png'
 
 import emailjs from 'emailjs-com';
 
@@ -11,6 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const slideImages = [
+  BrandLogo,
   Item1,
   Item2,
   Item3
@@ -43,13 +45,16 @@ class Main extends Component {
     return (
 
       <div className = "container">
+          <h4></h4>
       <div className="slide-container">
           <Slide {...properties}>
+
             <div className="each-slide">
               <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
 
               </div>
             </div>
+
             <div className="each-slide">
               <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
 
@@ -60,11 +65,17 @@ class Main extends Component {
 
               </div>
             </div>
+            <div className="each-slide">
+              <div style={{'backgroundImage': `url(${slideImages[3]})`}}>
+
+              </div>
+            </div>
           </Slide>
         </div>
 
         <div className="container">
 
+          <h5 className="center-align">Subscribe Modern Shop!</h5>
 
                     <div className="row">
                       <form className="col s12">
@@ -104,7 +115,7 @@ handleChange(event) {
 }
 
 handleSubmit(event) {
-  
+
   const templateId = 'subscribe';
 
   this.sendFeedback(templateId, {
@@ -116,7 +127,7 @@ handleSubmit(event) {
 
 sendFeedback(templateId, variables) {
   window.emailjs.send('gmail', templateId, variables).then(res => {
-    toast.info('Email successfully sent!' ,{
+    toast.info('Subscribe email successfully sent!' ,{
            position: "bottom-left",
            autoClose: 5000,
            hideProgressBar: true,
