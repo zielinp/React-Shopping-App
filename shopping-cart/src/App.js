@@ -17,7 +17,7 @@ class App extends Component {
             <div className="App">
               <Navbar/>
                 <Switch>
-                    <Route exact path="/React-Shopping-App" component={Main}/>
+                    <Route path="/React-Shopping-App" component={Main}/>
                     <Route path="/about" component={About}/>
                     <Route path="/products" component={Home}/>
                     <Route path="/cart" component={Cart}/>
