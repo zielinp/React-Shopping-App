@@ -1,5 +1,5 @@
 # React Shopping App
-> Simple e-commerce app.
+> Simple e-commerce app based on React, Redux and sending emails.
 
 ## Table of contents
 * [General info](#general-info)
