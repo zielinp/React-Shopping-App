@@ -18,18 +18,20 @@ class Home extends Component{
         <div className="card" key={item.id}>
                        <div className="card-image">
                            <img src={item.img} alt={item.title}/>
-                           <span className="card-title">{item.title}</span>
-                           <span to="/" className="btn btn-floating halfway-fab waves-effect waves-light red"
-                             onClick={()=>{this.handleClick(item.id)}}>
-                              <i className="material-icons"> add </i>
 
-                         </span>
+                             <span to="/" className="btn btn-floating halfway-fab waves-effect waves-light red"
+                               onClick={()=>{this.handleClick(item.id)}}>
+                                <i className="material-icons"> add </i>
+                           </span>
 
-                       </div>
+                           </div>
 
-                       <div className="card-content">
+                           <div className="card-content">
+                             <span className="card-title">{item.title}</span>
+
                            <p>{item.desc}</p>
                            <p><b>Price: {item.price}$</b></p>
+
                        </div>
                 </div>
       )
@@ -37,7 +39,6 @@ class Home extends Component{
     return(
       <div className="container">
                  <h4 className="center">Products</h4>
-                 // box czy cont
                  <div className="box">
                      {itemList}
                  </div>

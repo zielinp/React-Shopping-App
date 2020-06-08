@@ -33,6 +33,7 @@ class Summary extends Component {
     let addedItems = this.props.items.length ? ( this.props.items.map(item=>{
                 return(
 
+
                     <li className="collection-item avatar" key={item.id}>
 
                                 <div className="item-desc">
@@ -41,16 +42,9 @@ class Summary extends Component {
                                     <p><b>Quantity: {item.quantity}</b></p>
                               </div>
                             </li>
-
                 )
             })
         ): ( <p>Your cart is empty.</p> )
-
-
-
-
-
-
 
     return(
 <div className="container">
@@ -106,8 +100,11 @@ class Summary extends Component {
             <label for="country">Country</label>
           </div>
 
-          <Link to="/summary/end"><button className="waves-effect waves-light btn btn--submit"
+          <Link to="/end"><button className="waves-effect waves-light btn btn--submit"
           onClick={this.handleSubmit} disabled={!isEnabled}>Order</button></Link>
+
+
+
 
       </div>
     </form>
@@ -133,7 +130,7 @@ class Summary extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+  //  event.preventDefault();
 
     const templateId = 'summary';
 
@@ -144,22 +141,29 @@ class Summary extends Component {
       last_name: this.state.last_name,
       address: this.state.address,
       city: this.state.city,
-      country: this.state.country
+      country: this.state.country,
+      items: this.props.items.map(item=>{
+        return(
+        // ["Model: ",item.title, "Price: ",item.price, "Quantity: ",item.quantity]
+        `Model: ${item.title} -- Price: ${item.price}$ -- Quantity: ${item.quantity}`
+
+      )}),
+
+
+
+      total: this.props.total
+
     })
   }
 
   sendFeedback(templateId, variables) {
-    console.log(variables);
+    //alert(this.state.addedItems);
     window.emailjs.send('gmail', templateId, variables).then(res => {
       console.log('Email successfully sent!')
     })
     // Handle errors here however you like, or use a React error boundary
     .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
   }
-
-
-
-
 
 
 }

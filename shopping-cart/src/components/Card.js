@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import BrandLogo from '../images/brand_logo.png'
 
+
 class Card extends Component {
   render() {
 
@@ -21,7 +22,7 @@ class Card extends Component {
           <p>{this.props.desc}</p>
         </div>
       </div>
-    
+
 
   )
   }

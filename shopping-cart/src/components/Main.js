@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import { Slide } from 'react-slideshow-image';
 
-import Item1 from '../images/item1.jpg'
-import Item2 from '../images/item2.jpg'
-import Item3 from '../images/item3.jpg'
-import BrandLogo from '../images/brand_logo.png'
+import Shoes1 from '../images/shoes1.jpg'
+import Shoes2 from '../images/shoes2.jpg'
+import Shoes3 from '../images/shoes3.jpg'
+import Logo from '../images/logo.png'
 
 import emailjs from 'emailjs-com';
 
@@ -12,10 +12,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const slideImages = [
-  BrandLogo,
-  Item1,
-  Item2,
-  Item3
+  Logo,
+  Shoes1,
+  Shoes2,
+  Shoes3
 ];
 
 const properties = {
@@ -73,7 +73,7 @@ class Main extends Component {
           </Slide>
         </div>
 
-        <div className="container">
+        <div className="container_main">
 
           <h5 className="center-align">Subscribe Modern Shop!</h5>
 

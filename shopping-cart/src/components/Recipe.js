@@ -37,6 +37,7 @@ componentWillUnmount() {
                     <div className="checkout">
 
                         <Link to="/summary"><button className="waves-effect waves-light btn">Checkout</button></Link>
+                        <h4></h4>
 
                     </div>
                  </div>
