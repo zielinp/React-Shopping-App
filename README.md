@@ -13,6 +13,7 @@
 Project created as part of learning the basics of React and Redux.
 
 ## Demo
+https://zielinp.github.io/React-Shopping-App/
 
 ## Technologies
 * React
