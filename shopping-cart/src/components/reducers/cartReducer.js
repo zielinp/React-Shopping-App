@@ -29,7 +29,7 @@ const cartReducer= (state = initState,action)=>{
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
 
-         let addedItem = state.items.find(item=> item.id === action.id) // skąd są itemy
+         let addedItem = state.items.find(item=> item.id === action.id) //
           //check if the action id exists in the addedItems
          let existed_item= state.addedItems.find(item=> action.id === item.id)
 
@@ -46,9 +46,9 @@ const cartReducer= (state = initState,action)=>{
 
          if(existed_item)
          {
-            addedItem.quantity += 1 //skąd jest quantity?
+            addedItem.quantity += 1 //
              return{
-                ...state, // co oznaczają te ...
+                ...state, //
                  total: state.total + addedItem.price
                   }
         }
